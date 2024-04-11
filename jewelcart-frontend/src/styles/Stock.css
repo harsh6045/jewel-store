@@ -1,0 +1,34 @@
+.stock-card {
+    transition: box-shadow 0.3s ease, background-color 0.3s ease; /* Fix the syntax error here */
+    border-radius: 8px;
+  }
+  
+  .stock-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: green; 
+  }
+  
+
+  .btndelandupd {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem; /* Add margin for spacing */
+  }
+  
+  /* Optional: Style for buttons */
+  .btndelandupd button {
+    /* Add your button styles here */
+  }
+  
+  /* Optional: Style for the specific buttons */
+  .btndelandupd .btn-danger {
+    /* Add styles for the "Delete" button */
+  }
+  
+  .btndelandupd .btn-primary {
+    /* Add styles for the "Update" button */
+  }
+  
+
+
+  
