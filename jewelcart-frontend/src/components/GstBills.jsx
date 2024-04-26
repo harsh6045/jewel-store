@@ -21,8 +21,8 @@ export const GstBills = () => {
 
   // Extra dummy data
   const extraDummyData = [
-    { id: 101, billNumber: 'B101', customerName: 'Dev Joshi', amount: 1500 },
-    { id: 102, billNumber: 'B102', customerName: 'Meet K.', amount: 2200 },
+    { id: 1, billNumber: 'B101', customerName: 'Dev Joshi', amount: 1500 },
+    { id: 2, billNumber: 'B102', customerName: 'Meet K.', amount: 2200 },
     // Add more dummy data as needed
   ];
 
