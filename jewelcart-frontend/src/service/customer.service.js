@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/customers"; // Update API endpoint for customers
+const API_URL = "http://jewel-store.railway.internal/api/customers"; // Update API endpoint for customers
 
 class CustomerService {
     getAllCustomers() {
