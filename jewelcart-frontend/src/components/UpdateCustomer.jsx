@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import customerService from '../service/customer.service';
-import stockService from '../service/stock.service'; // Import stock service
+import stockService from '../service/stock.service';
 
 export const UpdateCustomer = () => {
   const [customer, setCustomer] = useState({});
@@ -20,11 +20,12 @@ export const UpdateCustomer = () => {
         console.log(err);
       });
 
-    stockService.getAllStocks()
-      .then(res => {
+    stockService
+      .getAllStocks()
+      .then((res) => {
         setStocks(res.data);
       })
-      .catch(err => {
+      .catch((err) => {
         console.error('Error fetching stocks:', err);
       });
   }, [id]);
@@ -49,9 +50,9 @@ export const UpdateCustomer = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center h-100">
-      <div className="form-container">
-        <h2 className="text-center">Update Customer</h2>
+    <div className="d-flex justify-content-center align-items-center min-vh-100">
+      <div className="form-container p-4 bg-white rounded shadow">
+        <h2 className="text-center mb-4">Update Customer</h2>
         <form onSubmit={handleUpdateCustomer}>
           <div className="mb-3">
             <label htmlFor="name" className="form-label">
@@ -65,7 +66,6 @@ export const UpdateCustomer = () => {
               value={customer.name}
               onChange={handleInputChange}
               maxLength={50}
-              size={30}
             />
           </div>
           <div className="mb-3">
@@ -80,7 +80,6 @@ export const UpdateCustomer = () => {
               value={customer.phoneno}
               onChange={handleInputChange}
               maxLength={20}
-              size={20}
             />
           </div>
           <div className="mb-3">
@@ -94,7 +93,6 @@ export const UpdateCustomer = () => {
               name="dues"
               value={customer.dues}
               onChange={handleInputChange}
-              size={10}
             />
           </div>
           <div className="mb-3">
@@ -109,7 +107,6 @@ export const UpdateCustomer = () => {
               value={customer.date}
               onChange={handleInputChange}
               maxLength={20}
-              size={20}
             />
           </div>
           <div className="mb-3 form-check">
@@ -126,7 +123,9 @@ export const UpdateCustomer = () => {
             </label>
           </div>
           <div className="mb-3">
-            <label htmlFor="stock" className="form-label">Stock:</label>
+            <label htmlFor="stock" className="form-label">
+              Stock:
+            </label>
             <select
               className="form-select"
               id="stock"
@@ -135,12 +134,14 @@ export const UpdateCustomer = () => {
               onChange={handleInputChange}
             >
               <option value="">Select Stock</option>
-              {stocks.map(stock => (
-                <option key={stock.id} value={stock.id}>{stock.name}</option>
+              {stocks.map((stock) => (
+                <option key={stock.id} value={stock.id}>
+                  {stock.name}
+                </option>
               ))}
             </select>
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary w-100">
             Update Customer
           </button>
         </form>

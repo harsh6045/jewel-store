@@ -7,7 +7,8 @@ export const GstBills = () => {
 
   useEffect(() => {
     // Fetch GST bills data from your API endpoint
-    axios.get('YOUR_API_ENDPOINT')
+    axios
+      .get('YOUR_API_ENDPOINT')
       .then(response => {
         setGSTBills(response.data);
         setLoading(false);
@@ -29,31 +30,33 @@ export const GstBills = () => {
   const allGstBills = [...gstBills, ...extraDummyData];
 
   return (
-    <div className="container">
-      <h2>GST Bills</h2>
+    <div className="container my-4">
+      <h2 className="text-center mb-4">GST Bills</h2>
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <table className="table">
-          <thead>
-            <tr>
-              <th>Bill Number</th>
-              <th>Customer Name</th>
-              <th>Amount</th>
-              {/* Add more columns based on your GST bill structure */}
-            </tr>
-          </thead>
-          <tbody>
-            {allGstBills.map(bill => (
-              <tr key={bill.id}>
-                <td>{bill.billNumber}</td>
-                <td>{bill.customerName}</td>
-                <td>{bill.amount}</td>
-                {/* Add more cells based on your GST bill structure */}
+        <div className="table-responsive">
+          <table className="table table-bordered">
+            <thead>
+              <tr>
+                <th>Bill Number</th>
+                <th>Customer Name</th>
+                <th>Amount</th>
+                {/* Add more columns based on your GST bill structure */}
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {allGstBills.map(bill => (
+                <tr key={bill.id}>
+                  <td>{bill.billNumber}</td>
+                  <td>{bill.customerName}</td>
+                  <td>{bill.amount}</td>
+                  {/* Add more cells based on your GST bill structure */}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       )}
     </div>
   );

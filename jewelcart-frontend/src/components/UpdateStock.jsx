@@ -39,9 +39,9 @@ export const UpdateStock = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center h-100">
-      <div className="form-container">
-        <h2 className="text-center">Update Stock</h2>
+    <div className="d-flex justify-content-center align-items-center min-vh-100">
+      <div className="form-container p-4 bg-white rounded shadow">
+        <h2 className="text-center mb-4">Update Stock</h2>
         <form onSubmit={handleUpdateStock}>
           <div className="mb-3">
             <label htmlFor="name" className="form-label">
@@ -54,8 +54,7 @@ export const UpdateStock = () => {
               name="name"
               value={stock.name}
               onChange={handleInputChange}
-              maxLength={50} // Set maximum length to 50 characters
-              size={30} // Set size of input field to 30 characters wide
+              maxLength={50}
             />
           </div>
           <div className="mb-3">
@@ -69,8 +68,7 @@ export const UpdateStock = () => {
               name="department"
               value={stock.department}
               onChange={handleInputChange}
-              maxLength={50} // Set maximum length to 50 characters
-              size={30} // Set size of input field to 30 characters wide
+              maxLength={50}
             />
           </div>
           <div className="mb-3">
@@ -84,8 +82,7 @@ export const UpdateStock = () => {
               name="quantity"
               value={stock.quantity}
               onChange={handleInputChange}
-              maxLength={50} // Set maximum length to 50 characters
-              size={30} // Set size of input field to 30 characters wide
+              maxLength={50}
             />
           </div>
           <div className="mb-3 form-check">
@@ -101,7 +98,7 @@ export const UpdateStock = () => {
               Present
             </label>
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary w-100">
             Update Stock
           </button>
         </form>

@@ -3,34 +3,51 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-success" style={{ boxShadow: '0 2px 4px rgba(0,0,0,0.2)', padding: '10px 20px' }}>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-success shadow">
       <div className="container-fluid">
-        <Link to="/" className="navbar-brand" aria-current="page" style={{ fontSize: '40px', fontWeight: 'bold', marginLeft: '10px' }}>
+        <Link to="/" className="navbar-brand fw-bold fs-4">
           Jewel Cart Management
         </Link>
-        
-
-        <Link to="/" className="navbar-brand" aria-current="page" style={{ fontSize: '20px', fontWeight: 'normal', marginLeft: '300px' }}>
-          Home
-        </Link>
-        <Link to="/stockList" className="navbar-brand" aria-current="page" style={{ fontSize: '20px', fontWeight: 'normal', marginLeft: '10px' }}>
-          Stock List
-        </Link>
-        <Link to="/customerstats" className="navbar-brand" aria-current="page" style={{ fontSize: '20px', fontWeight: 'normal', marginLeft: '10px' }}>
-          Customer Stats
-        </Link>
-        <Link to="/gstbills" className="navbar-brand" aria-current="page" style={{ fontSize: '20px', fontWeight: 'normal', marginLeft: '10px' }}>
-          GST Bills
-        </Link>
-        
-        <Link to="/aboutus" className="navbar-brand" aria-current="page" style={{ fontSize: '20px', fontWeight: 'normal', marginLeft: '10px' }}>
-          About Us
-        </Link>
-        
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
-        
+        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul className="navbar-nav">
+            <li className="nav-item">
+              <Link to="/" className="nav-link">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/stockList" className="nav-link">
+                Stock List
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/customerstats" className="nav-link">
+                Customer Stats
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/gstbills" className="nav-link">
+                GST Bills
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/aboutus" className="nav-link">
+                About Us
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   );

@@ -37,12 +37,14 @@ export const CreateStock = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center align-items-center h-100 "style={{ backgroundColor: '#7deac2' }}>
-      <div className="form-container">
-        <h2 className="text-center">Create Stock</h2>
+    <div className="d-flex justify-content-center align-items-center min-vh-100" style={{ backgroundColor: '#7deac2' }}>
+      <div className="form-container p-4 bg-white rounded shadow">
+        <h2 className="text-center mb-4">Create Stock</h2>
         <form onSubmit={handleCreateStock}>
           <div className="mb-3">
-            <label htmlFor="name" className="form-label">Name:</label>
+            <label htmlFor="name" className="form-label">
+              Name:
+            </label>
             <input
               type="text"
               className="form-control"
@@ -50,12 +52,14 @@ export const CreateStock = () => {
               name="name"
               value={newStock.name}
               onChange={handleInputChange}
-              maxLength={50} // Set maximum length to 50 characters
-              size={30} // Set size of input field to 30 characters wide
+              maxLength={50}
+              size={30}
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="department" className="form-label">Type:</label>
+            <label htmlFor="department" className="form-label">
+              Type:
+            </label>
             <input
               type="text"
               className="form-control"
@@ -63,12 +67,14 @@ export const CreateStock = () => {
               name="department"
               value={newStock.department}
               onChange={handleInputChange}
-              maxLength={50} // Set maximum length to 50 characters
-              size={30} // Set size of input field to 30 characters wide
+              maxLength={50}
+              size={30}
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="department" className="form-label">Quantity:</label>
+            <label htmlFor="quantity" className="form-label">
+              Quantity:
+            </label>
             <input
               type="number"
               className="form-control"
@@ -76,8 +82,8 @@ export const CreateStock = () => {
               name="quantity"
               value={newStock.quantity}
               onChange={handleInputChange}
-              maxLength={50} // Set maximum length to 50 characters
-              size={30} // Set size of input field to 30 characters wide
+              maxLength={50}
+              size={30}
             />
           </div>
           <div className="mb-3 form-check">
@@ -89,9 +95,13 @@ export const CreateStock = () => {
               checked={newStock.present}
               onChange={() => setNewStock({ ...newStock, present: !newStock.present })}
             />
-            <label className="form-check-label" htmlFor="present">Present</label>
+            <label className="form-check-label" htmlFor="present">
+              Present
+            </label>
           </div>
-          <button type="submit" className="btn btn-primary">Create Stock</button>
+          <button type="submit" className="btn btn-primary w-100">
+            Create Stock
+          </button>
         </form>
         {msg && <div className="mt-3 alert alert-success">{msg}</div>}
       </div>
